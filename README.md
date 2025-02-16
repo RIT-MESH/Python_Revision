@@ -21,8 +21,6 @@ This repository contains a **comprehensive guide to Python**, covering topics fr
 
 ---
 
----
-
 ## Python Basics 🐍
 - Introduction to Python syntax & semantics
 - Variables and data types
@@ -48,11 +46,15 @@ This repository contains a **comprehensive guide to Python**, covering topics fr
       print("Positive number")  # This will execute
   else:
       print("Negative number")
-
+  ```
+  
+  ```python
   # Example: For loop
   for i in range(5):
       print(i)  # Output: 0, 1, 2, 3, 4
+  ```
   
+  ```python
   # Example: While loop with break and continue
   count = 0
   while count < 5:
@@ -71,10 +73,18 @@ This repository contains a **comprehensive guide to Python**, covering topics fr
   # Example: List & Dictionary comprehension
   squares = [x**2 for x in range(5)]  # List comprehension
   print(squares)  # Output: [0, 1, 4, 9, 16]
+  ```
+
+## Functions 🔧
+- Defining and calling functions
+- Lambda functions
+- Example:
+  ```python
+  # Example: Function definition
+  def greet(name):
+      return "Hello, " + name
   
-  students = {"Alice": 85, "Bob": 90, "Charlie": 75}
-  passed_students = {k: v for k, v in students.items() if v > 80}
-  print(passed_students)  # Output: {'Alice': 85, 'Bob': 90}
+  print(greet("Alice"))  # Output: Hello, Alice
   ```
 
 ## Modules & Standard Library 📦
@@ -136,6 +146,44 @@ This repository contains a **comprehensive guide to Python**, covering topics fr
   for num in gen:
       print(num)  # Output: 0, 1, 2, 3, 4
   ```
+
+## Decorators 🏗️
+- Functions that modify other functions.
+- Example:
+  ```python
+  # Example: Using a decorator
+  def decorator_function(original_function):
+      def wrapper_function():
+          print("Wrapper executed before {}".format(original_function.__name__))
+          return original_function()
+      return wrapper_function
+  
+  @decorator_function
+  def say_hello():
+      print("Hello!")
+  
+  say_hello()
+  ```
+
+## Operator Overloading ➕➖
+- Customizing how operators work with user-defined objects.
+- Example:
+  ```python
+  # Example: Operator overloading
+  class Point:
+      def __init__(self, x, y):
+          self.x = x
+          self.y = y
+      def __add__(self, other):
+          return Point(self.x + other.x, self.y + other.y)
+  
+  p1 = Point(2, 3)
+  p2 = Point(4, 5)
+  result = p1 + p2
+  print(result.x, result.y)  # Output: 6, 8
+  ```
+
+---
 
 ## Contribution 🤝
 Feel free to contribute by adding new examples, correcting errors, or enhancing explanations. Fork the repo and submit a **Pull Request (PR)**! 🚀

@@ -21,6 +21,8 @@ This repository contains a **comprehensive guide to Python**, covering topics fr
 
 ---
 
+---
+
 ## Python Basics 🐍
 - Introduction to Python syntax & semantics
 - Variables and data types
